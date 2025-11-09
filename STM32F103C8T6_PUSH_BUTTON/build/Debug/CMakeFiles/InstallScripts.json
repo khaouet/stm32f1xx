@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/git/stm32/stm32f1xx/STM32F103C8T6_PUSH_BUTTON/build/Debug/cmake_install.cmake",
+		"C:/git/stm32/stm32f1xx/STM32F103C8T6_PUSH_BUTTON/build/Debug/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
