@@ -182,11 +182,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(YELLOW_LED_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PUSH_BUTTON_Pin */
-  GPIO_InitStruct.Pin = PUSH_BUTTON_Pin;
+  /*Configure GPIO pins : PB8 PUSH_BUTTON_Pin */
+  GPIO_InitStruct.Pin = GPIO_PIN_8|PUSH_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(PUSH_BUTTON_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
