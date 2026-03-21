@@ -145,31 +145,6 @@ void SystemClock_Config(void)
 }
 
 /**
-  * @brief Callback function for EXTI line detection.
-  * @param None
-  * @retval None
-  */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-
-{
-  /* USER CODE BEGIN HAL_GPIO_EXTI_Callback 0 */
-
-  /* USER CODE END HAL_GPIO_EXTI_Callback 0 */
-  if (GPIO_Pin == PUSH_BUTTON_INTERRUPT_Pin)
-  {
-    /* USER CODE BEGIN EXTI9_5_IRQn 1 */
-    HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
-    HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
-    HAL_GPIO_TogglePin(BLUE_LED_GPIO_Port, BLUE_LED_Pin);
-    /* USER CODE END EXTI9_5_IRQn 1 */
-  }
-  /* USER CODE BEGIN HAL_GPIO_EXTI_Callback 1 */
-
-  /* USER CODE END HAL_GPIO_EXTI_Callback 1 */
-}
-
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -213,7 +188,15 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == PUSH_BUTTON_INTERRUPT_Pin)
+  {
+    HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
+    HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
+    HAL_GPIO_TogglePin(BLUE_LED_GPIO_Port, BLUE_LED_Pin);
+  }
+}
 /* USER CODE END 4 */
 
 /**

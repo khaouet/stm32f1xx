@@ -1,0 +1,47 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "ST-Link: Debug with GDB Server",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "cmake: build (Release)",
+            "postDebugTask": "Stop ST-Link GDB Server",
+            "miDebuggerServerAddress": "localhost:61234",
+            "program": "${workspaceFolder}/build/Debug/STM32F103C8T6_INTERRUPT_PB.elf",
+            "MIMode": "gdb",
+            "miDebuggerPath": "${env:CUBE_BUNDLE_PATH}/gnu-tools-for-stm32/13.3.1+st.9/bin/arm-none-eabi-gdb.exe",
+            "stopAtEntry": true,
+            "serverStartupCommand": "target remote localhost:61234",
+            "launchCompleteCommand": "exec-continue",
+            "setupCommands": [
+                {
+                    "description": "Check if GDB server is ready",
+                    "text": "set confirm off",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Reset target",
+                    "text": "monitor reset halt",
+                    "ignoreFailures": false
+                },
+                {
+                    "description": "Set breakpoint on main",
+                    "text": "break main",
+                    "ignoreFailures": true
+                }
+            ],
+            "preRunCommands": [
+                "load"
+            ],
+            "postRunCommands": [],
+            "logging": {
+                "engineLogging": false
+            }
+        }
+    ]
+}
