@@ -97,7 +97,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  //int x = 12/0;
 
     /* USER CODE BEGIN 3 */
 
