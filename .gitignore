@@ -51,3 +51,32 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# STM32/CMake/IDE artifacts
+build/
+Debug/
+Release/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDE metadata
+.metadata/
+.vscode/
+.idea/
+.vs/
+
+# Temp & backups
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+*.bak
+*.user
+*.workspace
+
+# Proteus project backups
+Proteus/Project Backups/
+*.pdsprj

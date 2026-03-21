@@ -1,4 +1,32 @@
 build
 mx.scratch
 !.settings
+
+# Common build directories
+Debug/
+Release/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDE metadata
+.metadata/
+.vscode/
+.idea/
+.vs/
+
+# Temp & backups
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+*.bak
+*.user
+*.workspace
+
+# Proteus backup folders
+Project Backups/
+*.pdsprj
 *.workspace
