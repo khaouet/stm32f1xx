@@ -80,3 +80,9 @@ Makefile
 # Proteus project backups
 Proteus/Project Backups/
 *.pdsprj
+
+# User-local IDE artifacts
+FreeRTOS/*/.project
+Proteus/sdcard.mmc
+Simulation/**/.settings/
+Simulation/**/.launch
